@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The and More Project | Because You Are More</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e5',
+                            500: '#c86d51', // Warm terracotta
+                            600: '#b2593e',
+                            700: '#94442d',
+                            900: '#431b10',
+                        },
+                        navy: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-brand-50 text-slate-700 font-sans antialiased">
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <span class="p-2 bg-brand-500 text-white rounded-lg">
+                        <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+                    </span>
+                    <span class="text-xl font-bold tracking-tight text-navy-900">The <span class="text-brand-500">and More</span> Project</span>
+                </div>
+                
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#about" class="hover:text-brand-500 transition-colors">Our Mission</a>
+                    <a href="#pillars" class="hover:text-brand-500 transition-colors">What We Do</a>
+                    <a href="#board" class="hover:text-brand-500 transition-colors">Leadership</a>
+                    <a href="#get-help" class="hover:text-brand-500 transition-colors">Get Help</a>
+                    <a href="#involved" class="hover:text-brand-500 transition-colors">Get Involved</a>
+                </nav>
+                
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="#support" class="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-full font-medium shadow-sm transition-all duration-200 hover:shadow-md">
+                        Support Our Work
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-brand-50 focus:outline-none" aria-label="Toggle navigation menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white px-4 py-6 space-y-4">
+            <a href="#about" class="block text-base font-medium text-slate-700 hover:text-brand-500">Our Mission</a>
+            <a href="#pillars" class="block text-base font-medium text-slate-700 hover:text-brand-500">What We Do</a>
+            <a href="#board" class="block text-base font-medium text-slate-700 hover:text-brand-500">Leadership</a>
+            <a href="#get-help" class="block text-base font-medium text-slate-700 hover:text-brand-500">Get Help</a>
+            <a href="#involved" class="block text-base font-medium text-slate-700 hover:text-brand-500">Get Involved</a>
+            <a href="#support" class="block text-center bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-full font-medium">Support Our Work</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 lg:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block py-1 px-3.5 rounded-full bg-brand-100 text-brand-700 text-xs font-semibold uppercase tracking-wider mb-4">
+                Ohio Non-Profit Corporation
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-navy-900 tracking-tight leading-tight max-w-4xl mx-auto mb-6">
+                Because you are <span class="text-brand-500 underline decoration-brand-100">more</span> than your circumstances.
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Empowering single mothers with limited support and families impacted by domestic violence through practical assistance, essential resources, comfort, and hope.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#support" class="bg-brand-500 hover:bg-brand-600 text-white px-8 py-3.5 rounded-full font-semibold shadow-md hover:shadow-lg transition-all">
+                    Support Our Mission
+                </a>
+                <a href="#get-help" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-3.5 rounded-full font-semibold transition-all">
+                    Request Assistance
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Statement Callout -->
+    <section id="about" class="py-16 bg-white border-y border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <i data-lucide="quote" class="w-10 h-10 text-brand-500/30 mx-auto mb-4"></i>
+            <h2 class="text-2xl sm:text-3xl font-bold text-navy-900 leading-snug mb-6">
+                "The and More Project empowers single mothers with limited support and families impacted by domestic violence by providing practical assistance, essential resources, comfort, and compassionate support as they rebuild their lives and move toward stability and independence—because they are more than the circumstances they have faced."
+            </h2>
+            <div class="w-16 h-1 bg-brand-500 mx-auto rounded-full"></div>
+        </div>
+    </section>
+
+    <!-- Core Pillars / What We Do -->
+    <section id="pillars" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-navy-900 mb-4">How We Serve</h2>
+            <p class="text-slate-600">Our holistic approach addresses immediate needs while helping build a foundation for lasting stability.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Pillar 1 -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center mb-6">
+                    <i data-lucide="package" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Comfort & Essentials</h3>
+                <p class="text-slate-600 leading-relaxed text-sm">
+                    Providing hygiene packs, warm blankets, clothing, baby supplies, and comfort packages to restore immediate dignity during displacement or acute hardship.
+                </p>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center mb-6">
+                    <i data-lucide="book-open" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Educational Resources</h3>
+                <p class="text-slate-600 leading-relaxed text-sm">
+                    Equipping mothers and children with school supplies, learning materials, and developmental guidance to build resilience and foster long-term growth.
+                </p>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center mb-6">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Transition Assistance</h3>
+                <p class="text-slate-600 leading-relaxed text-sm">
+                    Delivering limited emergency assistance and relocation starter kits to help bridge the critical gap between crisis and permanent stability.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Board of Directors Section -->
+    <section id="board" class="py-24 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Leadership & Governance</span>
+                <h2 class="text-3xl font-bold text-navy-900 mt-2 mb-4">Meet Our Board of Directors</h2>
+                <p class="text-slate-600">
+                    Dedicated community leaders and advocates guiding our mission to bring hope, resources, and dignity to families across Ohio.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Board Member 1 -->
+                <div class="bg-brand-50/50 rounded-2xl p-6 border border-slate-100 text-center flex flex-col items-center">
+                    <div class="w-24 h-24 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 mb-4 ring-4 ring-white shadow-sm">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900">Name Here</h3>
+                    <p class="text-sm font-medium text-brand-600 mb-3">President & Founder</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Dedicated to serving vulnerable families and leading the strategic vision and community partnerships of The and More Project.
+                    </p>
+                </div>
+
+                <!-- Board Member 2 -->
+                <div class="bg-brand-50/50 rounded-2xl p-6 border border-slate-100 text-center flex flex-col items-center">
+                    <div class="w-24 h-24 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 mb-4 ring-4 ring-white shadow-sm">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900">Name Here</h3>
+                    <p class="text-sm font-medium text-brand-600 mb-3">Treasurer / Secretary</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Ensuring fiduciary responsibility, transparent governance, and operational integrity for all community contributions and programs.
+                    </p>
+                </div>
+
+                <!-- Board Member 3 -->
+                <div class="bg-brand-50/50 rounded-2xl p-6 border border-slate-100 text-center flex flex-col items-center">
+                    <div class="w-24 h-24 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 mb-4 ring-4 ring-white shadow-sm">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900">Name Here</h3>
+                    <p class="text-sm font-medium text-brand-600 mb-3">Director / Community Outreach</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Focusing on grassroots engagement, volunteer coordination, and building support networks for women and children in need.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assistance / Intake Section -->
+    <section id="get-help" class="py-20 bg-navy-900 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">You Are Not Alone.</h2>
+            <p class="text-slate-300 max-w-2xl mx-auto mb-8">
+                If you or your family are navigating hardship, crisis, or displacement, our confidential team is here to listen and help connect you with support.
+            </p>
+            <form action="mailto:theandmoreproject@gmail.com" method="post" enctype="text/plain" class="max-w-md mx-auto space-y-4 text-left">
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1">Your Name</label>
+                    <input type="text" name="Name" required placeholder="Jane Doe" class="w-full px-4 py-3 rounded-lg bg-navy-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1">Email or Phone</label>
+                    <input type="text" name="Contact" required placeholder="contact@example.com" class="w-full px-4 py-3 rounded-lg bg-navy-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1">How can we support you?</label>
+                    <textarea rows="3" name="Message" required placeholder="Tell us briefly about your situation..." class="w-full px-4 py-3 rounded-lg bg-navy-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3 rounded-lg transition-colors">
+                    Submit Confidential Request
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Get Involved / Support -->
+    <section id="involved" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-brand-100 rounded-3xl p-8 sm:p-16 flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div class="max-w-xl">
+                <h2 class="text-3xl font-bold text-navy-900 mb-4">Join Us in Restoring Hope</h2>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Every donation, volunteer hour, and essential supply helps single mothers and families impacted by domestic violence rebuild their lives with support, stability, and hope right here in our community.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <span class="inline-flex items-center gap-2 text-sm font-medium text-brand-900 bg-white/70 px-3 py-1.5 rounded-md">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-brand-600"></i> Direct Community Impact
+                    </span>
+                    <span class="inline-flex items-center gap-2 text-sm font-medium text-brand-900 bg-white/70 px-3 py-1.5 rounded-md">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-brand-600"></i> Local Ohio Support
+                    </span>
+                </div>
+            </div>
+            <div id="support" class="bg-white p-6 rounded-2xl shadow-sm w-full max-w-md">
+                <h3 class="font-bold text-navy-900 mb-2 text-center">Support Our Mission</h3>
+                <p class="text-xs text-slate-500 text-center mb-6">Help fund essential comfort kits, supplies, and emergency assistance.</p>
+                <div class="space-y-3">
+                    <a href="mailto:theandmoreproject@gmail.com?subject=Inquiry%20to%20Support%20The%20And%20More%20Project" class="block w-full text-center bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3 rounded-lg transition-colors">
+                        Partner or Donate
+                    </a>
+                    <a href="mailto:theandmoreproject@gmail.com?subject=Supply%20Drive%20Inquiry" class="block w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-3 rounded-lg transition-colors">
+                        Host a Supply Drive
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <p class="font-bold text-navy-900 text-lg">The and More Project</p>
+                    <p class="text-xs text-slate-500 max-w-md mt-1 leading-relaxed">
+                        An Ohio Non-Profit Corporation organized and operated for charitable and educational purposes.
+                    </p>
+                    <p class="text-[11px] text-slate-400 max-w-md mt-2">
+                        *Note: 501(c)(3) tax-exempt status application is currently in progress. Contributions are not currently tax-deductible as charitable donations for federal income tax purposes.
+                    </p>
+                </div>
+                <div class="md:text-right flex flex-col md:items-end justify-center">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Get in Touch</span>
+                    <a href="mailto:theandmoreproject@gmail.com" class="inline-flex items-center gap-2 text-brand-600 hover:text-brand-700 font-medium text-sm transition-colors">
+                        <i data-lucide="mail" class="w-4 h-4"></i> theandmoreproject@gmail.com
+                    </a>
+                </div>
+            </div>
+            <div class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4">
+                <p>&copy; 2026 The and More Project. All rights reserved.</p>
+                <p>Because you are more.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
