@@ -62,6 +62,7 @@
                     <a href="#who-we-help" class="hover:text-brand-500 transition-colors">Who We Help</a>
                     <a href="#board" class="hover:text-brand-500 transition-colors">Leadership</a>
                     <a href="#get-help" class="hover:text-brand-500 transition-colors">Get Help</a>
+                    <a href="#current-needs" class="hover:text-brand-500 transition-colors">Current Needs</a>
                     <a href="#involved" class="hover:text-brand-500 transition-colors">Get Involved</a>
                 </nav>
                 
@@ -85,6 +86,7 @@
             <a href="#who-we-help" class="block text-base font-medium text-slate-700 hover:text-brand-500">Who We Help</a>
             <a href="#board" class="block text-base font-medium text-slate-700 hover:text-brand-500">Leadership</a>
             <a href="#get-help" class="block text-base font-medium text-slate-700 hover:text-brand-500">Get Help</a>
+            <a href="#current-needs" class="block text-base font-medium text-slate-700 hover:text-brand-500">Current Needs</a>
             <a href="#involved" class="block text-base font-medium text-slate-700 hover:text-brand-500">Get Involved</a>
             <a href="#support" class="block text-center bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-full font-medium">Support Our Work</a>
         </div>
@@ -143,7 +145,7 @@
                 <h3 class="text-xl font-bold text-navy-900 mb-3">Wrapped in Hope</h3>
                 <p class="text-slate-600 leading-relaxed text-sm mb-4">
                     Handmade comfort items created especially for children experiencing crisis, displacement,
-                    or major life transitions.
+                    or major life transitions. Handmade donations are also provided through Momba’s Organized Chaos.
                 </p>
                 <p class="text-sm font-medium text-brand-600">Blankets • Crochet Snuggles • Comfort Items</p>
             </div>
@@ -155,7 +157,8 @@
                 <h3 class="text-xl font-bold text-navy-900 mb-3">Fresh Start Totes</h3>
                 <p class="text-slate-600 leading-relaxed text-sm mb-4">
                     Totes filled with practical necessities and personal-care items for women and mothers
-                    beginning again after hardship, crisis, or displacement.
+                    beginning again after hardship, crisis, or displacement. Handmade items and donations
+                    are also provided through Momba’s Organized Chaos.
                 </p>
                 <p class="text-sm font-medium text-brand-600">Hygiene • Household Essentials • Personal Care</p>
             </div>
@@ -166,7 +169,7 @@
                 </div>
                 <h3 class="text-xl font-bold text-navy-900 mb-3">Baked With Purpose</h3>
                 <p class="text-slate-600 leading-relaxed text-sm mb-4">
-                    Fundraising through Momba's Fresh Bakes that helps support programs, essential resources,
+                    Fundraising powered by Momba’s Fresh Bakes that helps support programs, essential resources,
                     and assistance provided through The and More Project.
                 </p>
                 <p class="text-sm font-medium text-brand-600">Good Food • Local Support • Meaningful Impact</p>
@@ -354,41 +357,124 @@
                 </div>
             </div>
 
-            <form action="mailto:theandmoreproject@gmail.com"
-                  method="post"
-                  enctype="text/plain"
+            <form id="assistance-form"
+                  action="https://formsubmit.co/ajax/theandmoreproject@gmail.com"
+                  method="POST"
                   class="max-w-md mx-auto space-y-4 text-left">
+
+                <input type="hidden" name="_subject" value="New Assistance Request - The and More Project">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
                 <div>
                     <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1">Your Name</label>
-                    <input type="text" name="Name" required placeholder="Your name"
+                    <input type="text"
+                           name="Name"
+                           required
+                           autocomplete="name"
+                           placeholder="Your name"
                            class="w-full px-4 py-3 rounded-lg bg-navy-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500">
                 </div>
 
                 <div>
                     <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1">Email or Phone</label>
-                    <input type="text" name="Contact" required placeholder="How should we contact you?"
+                    <input type="text"
+                           name="Contact"
+                           required
+                           autocomplete="email"
+                           placeholder="How should we contact you?"
                            class="w-full px-4 py-3 rounded-lg bg-navy-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500">
                 </div>
 
                 <div>
                     <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1">How can we support you?</label>
-                    <textarea rows="4" name="Message" required placeholder="Tell us briefly about your situation..."
+                    <textarea rows="4"
+                              name="Message"
+                              required
+                              placeholder="Tell us briefly about your situation..."
                               class="w-full px-4 py-3 rounded-lg bg-navy-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500"></textarea>
                 </div>
 
-                <button type="submit"
-                        class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3 rounded-lg transition-colors">
+                <button id="assistance-submit"
+                        type="submit"
+                        class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3 rounded-lg transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
                     Send Request
                 </button>
 
+                <div id="assistance-status"
+                     class="hidden rounded-lg px-4 py-3 text-sm leading-relaxed"
+                     role="status"
+                     aria-live="polite"></div>
+
                 <p class="text-xs text-slate-400 text-center leading-relaxed pt-2">
-                    This form opens your device's email application. Please do not include information
-                    you do not feel safe sending by email.
+                    Your request will be sent through a third-party form service to The and More Project.
+                    Please share only the information needed for us to respond. Do not include highly sensitive
+                    personal, financial, medical, or legal information.
                 </p>
             </form>
         </div>
     </section>
 
+
+    <!-- Current Needs -->
+    <section id="current-needs" class="py-24 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Current Needs</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 mt-2 mb-4">Help Us Meet Practical Needs</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Small, practical items can make a meaningful difference for a woman, child, or family
+                    navigating a difficult season. These are some of the items we are currently collecting.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
+                <div class="bg-brand-50 rounded-2xl p-5 text-center border border-brand-100">
+                    <i data-lucide="bath" class="w-7 h-7 text-brand-600 mx-auto mb-3"></i>
+                    <p class="font-semibold text-navy-900">Toiletries</p>
+                </div>
+                <div class="bg-brand-50 rounded-2xl p-5 text-center border border-brand-100">
+                    <i data-lucide="heart" class="w-7 h-7 text-brand-600 mx-auto mb-3"></i>
+                    <p class="font-semibold text-navy-900">Feminine Care</p>
+                </div>
+                <div class="bg-brand-50 rounded-2xl p-5 text-center border border-brand-100">
+                    <i data-lucide="baby" class="w-7 h-7 text-brand-600 mx-auto mb-3"></i>
+                    <p class="font-semibold text-navy-900">Diapers & Wipes</p>
+                </div>
+                <div class="bg-brand-50 rounded-2xl p-5 text-center border border-brand-100">
+                    <i data-lucide="sparkles" class="w-7 h-7 text-brand-600 mx-auto mb-3"></i>
+                    <p class="font-semibold text-navy-900">Laundry Supplies</p>
+                </div>
+                <div class="bg-brand-50 rounded-2xl p-5 text-center border border-brand-100">
+                    <i data-lucide="fuel" class="w-7 h-7 text-brand-600 mx-auto mb-3"></i>
+                    <p class="font-semibold text-navy-900">Gas Gift Cards</p>
+                </div>
+                <div class="bg-brand-50 rounded-2xl p-5 text-center border border-brand-100">
+                    <i data-lucide="shopping-cart" class="w-7 h-7 text-brand-600 mx-auto mb-3"></i>
+                    <p class="font-semibold text-navy-900">Grocery Gift Cards</p>
+                </div>
+                <div class="bg-brand-50 rounded-2xl p-5 text-center border border-brand-100">
+                    <i data-lucide="package" class="w-7 h-7 text-brand-600 mx-auto mb-3"></i>
+                    <p class="font-semibold text-navy-900">Fresh Start Tote Items</p>
+                </div>
+                <div class="bg-brand-50 rounded-2xl p-5 text-center border border-brand-100">
+                    <i data-lucide="heart-handshake" class="w-7 h-7 text-brand-600 mx-auto mb-3"></i>
+                    <p class="font-semibold text-navy-900">Comfort Items</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <p class="text-sm text-slate-500 mb-5">
+                    Needs may change as requests are received. Contact us before organizing a large donation or supply drive.
+                </p>
+                <a href="mailto:theandmoreproject@gmail.com?subject=Current%20Needs%20Donation"
+                   class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white px-7 py-3.5 rounded-full font-semibold shadow-sm transition-colors">
+                    <i data-lucide="package-plus" class="w-5 h-5"></i>
+                    Help With Current Needs
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Get Involved / Support -->
     <section id="involved" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -478,6 +564,18 @@
                     <a href="mailto:theandmoreproject@gmail.com" class="inline-flex items-center gap-2 text-brand-600 hover:text-brand-700 font-medium text-sm transition-colors">
                         <i data-lucide="mail" class="w-4 h-4"></i> theandmoreproject@gmail.com
                     </a>
+                    <div class="flex items-center gap-4 mt-3">
+                        <a href="https://www.facebook.com/theandmoreproject"
+                           target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2 text-slate-500 hover:text-brand-600 text-sm transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i> Facebook
+                        </a>
+                        <a href="https://www.instagram.com/theandmoreproject/"
+                           target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2 text-slate-500 hover:text-brand-600 text-sm transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i> Instagram
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4">
@@ -530,6 +628,59 @@
                 }
             }
         });
+
+
+        // Assistance request form submission
+        const assistanceForm = document.getElementById('assistance-form');
+        const assistanceSubmit = document.getElementById('assistance-submit');
+        const assistanceStatus = document.getElementById('assistance-status');
+
+        if (assistanceForm) {
+            assistanceForm.addEventListener('submit', async function(event) {
+                event.preventDefault();
+
+                assistanceSubmit.disabled = true;
+                assistanceSubmit.textContent = 'Sending...';
+
+                assistanceStatus.className =
+                    'rounded-lg px-4 py-3 text-sm leading-relaxed bg-slate-800 border border-slate-700 text-slate-200';
+                assistanceStatus.textContent = 'Sending your request...';
+
+                try {
+                    const formData = new FormData(assistanceForm);
+
+                    const response = await fetch(assistanceForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    const result = await response.json().catch(() => ({}));
+
+                    if (response.ok && result.success !== false) {
+                        assistanceStatus.className =
+                            'rounded-lg px-4 py-3 text-sm leading-relaxed bg-emerald-900/40 border border-emerald-700 text-emerald-100';
+                        assistanceStatus.textContent =
+                            'Thank you. Your request has been sent to The and More Project. We will respond as soon as we are able.';
+                        assistanceForm.reset();
+                    } else {
+                        throw new Error(result.message || 'Submission failed.');
+                    }
+                } catch (error) {
+                    assistanceStatus.className =
+                        'rounded-lg px-4 py-3 text-sm leading-relaxed bg-red-900/40 border border-red-700 text-red-100';
+                    assistanceStatus.innerHTML =
+                        'We could not send your request through the website. Please email ' +
+                        '<a class="underline font-semibold" href="mailto:theandmoreproject@gmail.com">' +
+                        'theandmoreproject@gmail.com</a>.';
+                } finally {
+                    assistanceSubmit.disabled = false;
+                    assistanceSubmit.textContent = 'Send Request';
+                }
+            });
+        }
 
     </script>
 </body>
