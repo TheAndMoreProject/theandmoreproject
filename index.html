@@ -506,31 +506,31 @@
             });
         });
 
-        // Quick Exit
-        const quickExit = document.getElementById('quick-exit');
+        // Quick Exit Button
+        document.getElementById('quick-exit').onclick = function () {
+            window.location.href = 'https://www.google.com/';
+        };
 
-        quickExit.addEventListener('click', () => {
-            window.location.replace('https://www.google.com');
-        });
-
-        // Press Escape twice quickly to leave the website
+        // Press Escape twice quickly for Quick Exit
         let escapeCount = 0;
         let escapeTimer;
 
-        document.addEventListener('keydown', (event) => {
+        document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 escapeCount++;
+
                 clearTimeout(escapeTimer);
 
-                escapeTimer = setTimeout(() => {
+                escapeTimer = setTimeout(function() {
                     escapeCount = 0;
                 }, 1500);
 
                 if (escapeCount >= 2) {
-                    window.location.replace('https://www.google.com');
+                    window.location.href = 'https://www.google.com/';
                 }
             }
         });
+
     </script>
 </body>
 </html>
